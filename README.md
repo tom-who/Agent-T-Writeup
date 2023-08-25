@@ -31,3 +31,20 @@ PORT   STATE SERVICE VERSION
 
 `
 |_http-title:  Admin Dashboard`
+
+We see that the only port running is 80, visiting the website we are greeted by an admin dashboard template and that the server is running PHP 8.1.0
+
+## Vulnerabilty hunting
+
+Heading over to  https://www.exploit-db.com we find that PHP 8.1.0 is vulnerable to remote code execution by changing our user agent
+CVE LINK: https://www.exploit-db.com/exploits/49933
+
+We now download this using wget to our linux machine and run the program with python3
+
+`python3 49933`
+
+
+The script asks us for the host URL
+
+
+ 3e
